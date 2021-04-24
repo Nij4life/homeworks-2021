@@ -10,4 +10,5 @@ arr.each { |e| puts e}
 puts "\n=========== map example =============\n"
 pp arr.map { |e| e * 3}
 
-
+puts "\n=========== select example =============\n"
+pp [1,3,5,7].select { |e| e < 4}

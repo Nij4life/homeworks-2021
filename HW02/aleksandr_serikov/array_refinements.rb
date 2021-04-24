@@ -12,12 +12,21 @@ module ArrayRefinement
     end
     
     def map
-    new_array = []
-    for i in 0...size
-      new_array << (self[i] && yield(self[i]))
-    end
+      new_array = []
+      for i in 0...size
+        new_array << (self[i] && yield(self[i]))
+      end
     
     new_array
+    end
+    
+    def select
+      new_array = []
+      for i in 0...size
+        new_array << self[i] if yield(self[i])
+      end
+    
+      new_array
     end
     
   end 
