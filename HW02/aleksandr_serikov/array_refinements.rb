@@ -1,5 +1,3 @@
-require 'pry'
-
 module ArrayRefinement
 
   refine Array do
@@ -14,10 +12,10 @@ module ArrayRefinement
     def map
       new_array = []
       for i in 0...size
-        new_array << (self[i] && yield(self[i]))
+        new_array << yield(self[i])
       end
     
-    new_array
+      new_array
     end
     
     def select
