@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'a_serikov_hw_03_t_01'
 require_relative 'a_serikov_hw_03_t_02'
 require_relative 'a_serikov_hw_03_t_03'
@@ -15,7 +17,6 @@ LOG
 puts task1(logs)
 
 puts "\n>> Task 2 <<"
-
 
 logs = <<~LOGS
   10.6.246.103 - - [23/Apr/2018:20:30:39 +0300] "POST /test/2/messages HTTP/1.1" 200 48 0.0498
@@ -42,6 +43,5 @@ puts task3(logs)
 
 puts "\n>> Task 4 <<"
 
-puts task4("hel2!lo")
-puts task4("wicked .. !")
-
+puts task4('hel2!lo')
+puts task4('wicked .. !')
