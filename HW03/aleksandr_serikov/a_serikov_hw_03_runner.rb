@@ -1,6 +1,7 @@
 require_relative 'a_serikov_hw_03_t_01'
 require_relative 'a_serikov_hw_03_t_02'
 require_relative 'a_serikov_hw_03_t_03'
+require_relative 'a_serikov_hw_03_t_04'
 
 puts "\n>> Task 1 <<"
 
@@ -38,3 +39,9 @@ logs = <<~LOGS
 LOGS
 
 puts task3(logs)
+
+puts "\n>> Task 4 <<"
+
+puts task4("hel2!lo")
+puts task4("wicked .. !")
+
