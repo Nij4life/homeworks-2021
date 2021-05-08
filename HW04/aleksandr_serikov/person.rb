@@ -18,4 +18,8 @@ class Person
   def mark_as_read!
     notifications.clear
   end
+
+  def full_name
+    "#{name} #{surname}"
+  end
 end

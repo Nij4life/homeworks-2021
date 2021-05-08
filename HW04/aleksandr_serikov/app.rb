@@ -2,8 +2,12 @@ require 'pry'
 require_relative 'mentor'
 require_relative 'student'
 
-mentor = Mentor.new('mentor', 'Zu')
-student = Student.new('Vasya', 'Buka')
+puts
+mentor = Mentor.new('John', 'Doe')
+puts "create mentor: #{mentor.full_name}"
+student = Student.new('Vasya', 'Pupkin')
+puts "create student: #{student.full_name}"
+puts
 
 puts 'mentor subscribe student'
 puts "mentor students before subscribe: #{mentor.students.size}"
