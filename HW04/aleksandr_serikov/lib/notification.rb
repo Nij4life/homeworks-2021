@@ -6,6 +6,6 @@ class Notification
 
   def initialize(homework, message)
     @homework = homework
-    @message = message
+    @message = message.to_s
   end
 end

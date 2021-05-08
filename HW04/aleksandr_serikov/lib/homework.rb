@@ -18,27 +18,27 @@ class Homework
   end
 
   def to_work!
-    self.mentor.add_notification(Notification.new(self, __method__.to_s))
+    self.mentor.add_notification(Notification.new(self, __method__))
     change_status(__method__)
   end
 
   def to_check!
-    self.mentor.add_notification(Notification.new(self, __method__.to_s))
+    self.mentor.add_notification(Notification.new(self, __method__))
     change_status(__method__)
   end
 
   def add_answer!
-    self.mentor.add_notification(Notification.new(self, __method__.to_s))
+    self.mentor.add_notification(Notification.new(self, __method__))
     change_status(__method__)
   end
 
   def reject_to_work!
-    self.student.add_notification(Notification.new(self, __method__.to_s))
+    self.student.add_notification(Notification.new(self, __method__))
     change_status(__method__)
   end
 
   def accept!
-    self.student.add_notification(Notification.new(self, __method__.to_s))
+    self.student.add_notification(Notification.new(self, __method__))
     change_status(__method__)
   end
 end
