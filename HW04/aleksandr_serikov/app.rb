@@ -1,6 +1,6 @@
 require 'pry'
-require_relative 'mentor'
-require_relative 'student'
+require_relative 'lib/mentor'
+require_relative 'lib/student'
 
 puts
 mentor = Mentor.new('John', 'Doe')
