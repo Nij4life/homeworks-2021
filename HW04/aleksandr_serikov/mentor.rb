@@ -18,8 +18,14 @@ class Mentor < Person
   def accept_work(homework)
   end
 
-  def add_homework(*params)
-    Homework.new(*params)
+  def add_homework(f, t, student)
+    if students.include?(student)
+      new_homework = Homework.new(f, t, student)
+      student.add_homework(new_homework)
+      new_homework
+    else
+      raise 'You are not subscribed to this student'
+    end
   end
 
   def subscribe(kohai)
