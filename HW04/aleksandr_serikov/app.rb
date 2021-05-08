@@ -1,4 +1,4 @@
-require 'pry'
+# frozen_string_literal: true
 require_relative 'lib/mentor'
 require_relative 'lib/student'
 
@@ -22,8 +22,8 @@ puts "student homework size: #{student.homeworks.size}"
 puts "homework status: #{homework.status}"
 puts
 
-puts "mentor reject homework"
-mentor.reject_work(homework)
+puts 'mentor reject homework'
+mentor.reject_to_work!(homework)
 puts "homework status: #{homework.status}"
 
 puts 'END'

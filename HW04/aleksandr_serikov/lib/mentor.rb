@@ -12,15 +12,17 @@ class Mentor < Person
     @students = []
   end
 
-  def reject_work(homework)
+  def reject_to_work!(homework)
+    homework.reject_to_work!
   end
 
-  def accept_work(homework)
+  def accept!(homework)
+    homework.accept!
   end
 
-  def add_homework(f, t, student)
+  def add_homework(title, description, student)
     if students.include?(student)
-      new_homework = Homework.new(f, t, student)
+      new_homework = Homework.new(title, description, student, self)
       student.add_homework(new_homework)
       new_homework
     else
@@ -28,11 +30,12 @@ class Mentor < Person
     end
   end
 
-  def subscribe(kohai)
-    students << kohai
+  def subscribe(student)
+    students << student
   end
 
-  def unsubscribe(kohai)
-    students.delete!(kohai)
+  def unsubscribe(student)
+    students.delete!(student)
   end
+
 end

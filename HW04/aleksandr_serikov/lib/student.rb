@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'person'
-require 'pry'
+
 # Student
 class Student < Person
   attr_reader :mentor, :homeworks
@@ -12,7 +12,7 @@ class Student < Person
   end
 
   def subscribed(senpai)
-    @mentor |= senpai
+    @mentor ||= senpai
   end
 
   def unsubscribed
@@ -22,4 +22,17 @@ class Student < Person
   def add_homework(homework)
     homeworks << homework
   end
+
+  def to_work!(homework)
+    homework.to_work!
+  end
+
+  def to_check!(homework)
+    homework.to_check!
+  end
+
+  def add_answer!(homework)
+    homework.add_answer!
+  end
 end
+# TODO: переназвать методы как в примере.
