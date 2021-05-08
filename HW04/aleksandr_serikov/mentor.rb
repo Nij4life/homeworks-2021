@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 require_relative 'person'
-
+require_relative 'homework'
+require 'pry'
 # The senpai class that teaches young Padawans
 class Mentor < Person
   attr_reader :students
@@ -17,4 +18,7 @@ class Mentor < Person
   def accept_work(homework)
   end
 
+  def add_homework(*params)
+    Homework.new(*params)
+  end
 end
