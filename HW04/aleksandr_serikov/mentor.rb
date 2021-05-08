@@ -21,4 +21,12 @@ class Mentor < Person
   def add_homework(*params)
     Homework.new(*params)
   end
+
+  def subscribe(kohai)
+    students << kohai
+  end
+
+  def unsubscribe(kohai)
+    students.delete!(kohai)
+  end
 end
