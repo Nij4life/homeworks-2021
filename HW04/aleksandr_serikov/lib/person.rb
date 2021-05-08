@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
-require 'pry'
-# bla bla bla
+# Person
 class Person
   attr_reader :name, :surname, :notifications
 

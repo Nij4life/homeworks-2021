@@ -2,7 +2,7 @@
 
 require_relative 'person'
 require_relative 'homework'
-require 'pry'
+
 # The senpai class that teaches young Padawans
 class Mentor < Person
   attr_reader :students
@@ -24,6 +24,7 @@ class Mentor < Person
     if students.include?(student)
       new_homework = Homework.new(title, description, student, self)
       student.add_homework(new_homework)
+      new_homework.add_homework!
       new_homework
     else
       raise 'You are not subscribed to this student'

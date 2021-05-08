@@ -35,4 +35,3 @@ class Student < Person
     homework.add_answer!
   end
 end
-# TODO: переназвать методы как в примере.
