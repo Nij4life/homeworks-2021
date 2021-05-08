@@ -1,8 +1,11 @@
 # frozen_string_literal: true
+require_relative 'homework_rules'
 
 # Homework
 class Homework
-  attr_reader :title, :description, :student
+  attr_reader :title, :description, :student, :status
+
+  prepend HomeworkRules
 
   def initialize(title, description, student)
     @title = title
@@ -11,7 +14,7 @@ class Homework
     @status = 'to do'
   end
 
-  def send_status(new_status)
+  def send_status(new_status, person)
     @status = new_status
   end
 end

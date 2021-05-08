@@ -19,6 +19,11 @@ puts "student homework size: #{student.homeworks.size}"
 puts 'mentor add homework to student'
 homework = mentor.add_homework('first', 'bla la la', student)
 puts "student homework size: #{student.homeworks.size}"
+puts "homework status: #{homework.status}"
 puts
+
+puts "mentor reject homework"
+mentor.reject_work(homework)
+puts "homework status: #{homework.status}"
 
 puts 'END'
