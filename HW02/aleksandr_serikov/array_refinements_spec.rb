@@ -15,8 +15,22 @@ RSpec.describe ArrayRefinement do
     end
 
     context 'case block given' do
-      it 'not modified'  do
-        expect(arr.each { |e| e * 1 }).to eql([1, 2, 3, 4, 5])
+      it 'not modified' do
+        expect(arr.each { |e| e * 2 }).to eql([1, 2, 3, 4, 5])
+      end
+    end
+  end
+
+  describe '.each' do
+    context 'case no block given' do
+      it 'returns nil' do
+        expect(arr.map).to eql(nil)
+      end
+    end
+
+    context 'case block given' do
+      it 'modified' do
+        expect(arr.map { |e| e * 2 }).to eql([2, 4, 6, 8, 10])
       end
     end
   end
