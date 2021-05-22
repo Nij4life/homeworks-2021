@@ -1,5 +1,4 @@
 require_relative 'array_refinements'
-require 'pry'
 
 using ArrayRefinement
 
@@ -21,7 +20,7 @@ RSpec.describe ArrayRefinement do
     end
   end
 
-  describe '.each' do
+  describe '.map' do
     context 'case no block given' do
       it 'returns nil' do
         expect(arr.map).to eql(nil)
@@ -31,6 +30,25 @@ RSpec.describe ArrayRefinement do
     context 'case block given' do
       it 'modified' do
         expect(arr.map { |e| e * 2 }).to eql([2, 4, 6, 8, 10])
+      end
+    end
+  end
+
+  describe '.select' do
+    context 'case no block given' do
+      it 'returns nil' do
+        expect(arr.select).to eql(nil)
+      end
+    end
+
+    context 'case block given' do
+      it 'selects objects with a suitable condition' do
+        expect(arr.select { |e| e.odd? }).to eql([1, 3, 5])
+      end
+
+      it 'not modified someself' do
+        arr.each { |e| e * 2 }
+        expect(arr).to eql([1, 2, 3, 4, 5])
       end
     end
   end
