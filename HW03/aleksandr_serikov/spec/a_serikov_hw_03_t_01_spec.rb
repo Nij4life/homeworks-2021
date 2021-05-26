@@ -12,8 +12,7 @@ describe 'task1' do
     end
 
     it 'returns string with error' do
-      result = task1(logs)
-      expect(result).to eql('2018-04-23 20:30:42: SSL error, peer: 10.6.246.101, peer cert: , #<Puma::MiniSSL::SSLError: System error: Undefined error: 0 - 0>')
+      expect(task1(logs)).to eql('2018-04-23 20:30:42: SSL error, peer: 10.6.246.101, peer cert: , #<Puma::MiniSSL::SSLError: System error: Undefined error: 0 - 0>')
     end
   end
 
@@ -27,8 +26,7 @@ describe 'task1' do
     end
 
     it 'returns empty string' do
-      result = task1(logs)
-      expect(result).to eql('')
+      expect(task1(logs)).to eql('')
     end
   end
 end

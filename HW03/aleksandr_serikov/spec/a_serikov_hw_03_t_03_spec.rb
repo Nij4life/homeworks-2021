@@ -51,8 +51,7 @@ describe 'task3' do
     end
 
     it "return '0'" do
-      result = task3(logs)
-      expect(result).to eql('0')
+      expect(task3(logs)).to eql('0')
     end
   end
 end

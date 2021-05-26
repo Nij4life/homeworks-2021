@@ -46,9 +46,8 @@ RSpec.describe ArrayRefinement do
         expect(arr.select { |e| e.odd? }).to eql([1, 3, 5])
       end
 
-      it 'not modified someself' do
-        arr.each { |e| e * 2 }
-        expect(arr).to eql([1, 2, 3, 4, 5])
+      it 'result and initial object are different' do
+        expect(arr.select { |e| e * 2 }.object_id).not_to eql(arr)
       end
     end
   end

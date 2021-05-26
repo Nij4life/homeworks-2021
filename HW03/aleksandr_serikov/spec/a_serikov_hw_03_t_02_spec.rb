@@ -17,9 +17,7 @@ describe 'task2' do
         "23/Apr/2018:20:30:42 +0300 FROM: 10.6.246.101 TO: /TEST/2/RUN",
         "23/Apr/2018:20:31:39 +0300 FROM: 10.6.246.101 TO: /TEST/2/MESSAGES"
       ]
-      result = task2(logs)
-
-      expect(result).to eql(expected_result)
+      expect(task2(logs)).to eql(expected_result)
     end
   end
 
@@ -32,8 +30,7 @@ describe 'task2' do
     end
 
     it 'return an empty array' do
-      result = task2(logs)
-      expect(result).to eql([])
+      expect(task2(logs)).to eql([])
     end
   end
 end
