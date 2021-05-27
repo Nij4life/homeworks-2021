@@ -30,7 +30,7 @@ RSpec.describe ArrayRefinement do
     end
 
     context 'when block is given' do
-      it 'modified' do
+      it 'returns modified array' do
         expect(arr.map { |e| e * 2 }).to eql([2, 4, 6, 8, 10])
       end
     end
