@@ -11,8 +11,13 @@ describe 'task1' do
       LOGS
     end
 
+    let(:expected_result) do
+      '2018-04-23 20:30:42: SSL error, peer: 10.6.246.101, peer cert: , '\
+       '#<Puma::MiniSSL::SSLError: System error: Undefined error: 0 - 0>'
+    end
+
     it 'returns string with error' do
-      expect(task1(logs)).to eql('2018-04-23 20:30:42: SSL error, peer: 10.6.246.101, peer cert: , #<Puma::MiniSSL::SSLError: System error: Undefined error: 0 - 0>')
+      expect(task1(logs)).to eql(expected_result)
     end
   end
 

@@ -39,7 +39,7 @@ describe 'task3' do
     end
   end
 
-  context 'there is no event with the call core in the log' do
+  context 'when there are no core events in the logs' do
     let(:logs) do
       <<~LOGS
         2018-04-23 17:17:49.7 ubuntu-xenial[14319] Debug - connecting to: 10.6.246.101
@@ -50,7 +50,7 @@ describe 'task3' do
       LOGS
     end
 
-    it "return '0'" do
+    it "returns '0'" do
       expect(task3(logs)).to eql('0')
     end
   end
