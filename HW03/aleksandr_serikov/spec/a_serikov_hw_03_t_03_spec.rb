@@ -1,7 +1,7 @@
 require_relative '../a_serikov_hw_03_t_03'
 
 describe 'task3' do
-  context 'log has two events with call core' do
+  context 'when log has two core events' do
     let(:logs) do
       <<~LOGS
         2018-04-23 17:17:49.7 ubuntu-xenial[14319] Debug - Calling core with action: event
@@ -14,12 +14,12 @@ describe 'task3' do
       LOGS
     end
 
-    it 'return a string duration of the action in SECONDS between core call events' do
+    it 'returns the period between core events' do
       expect(task3(logs)).to eql('49.1')
     end
   end
 
-  context 'log has four events with call core' do
+  context 'when log has four core events' do
     let(:logs) do
       <<~LOGS
         2018-04-23 17:17:49.7 ubuntu-xenial[14319] Debug - Calling core with action: event
@@ -34,7 +34,7 @@ describe 'task3' do
       LOGS
     end
 
-    it 'return a string duration of the action in SECONDS between core call events' do
+    it 'returns the period between core events' do
       expect(task3(logs)).to eql(["49.1", "21.0", "159.0"])
     end
   end

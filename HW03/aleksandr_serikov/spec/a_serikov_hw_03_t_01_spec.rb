@@ -1,7 +1,7 @@
 require_relative '../a_serikov_hw_03_t_01'
 
 describe 'task1' do
-  context 'we have an error line' do
+  context 'when logs have line with error' do
     let(:logs) do
       <<~LOGS
         10.6.246.103 - - [23/Apr/2018:20:30:39 +0300] "POST /grid/2/messages HTTP/1.1" 200 48 0.0498
@@ -16,7 +16,7 @@ describe 'task1' do
     end
   end
 
-  context "we don't have a line with an error" do
+  context "when logs haven't line with error" do
     let(:logs) do
       <<~LOGS
         10.6.246.103 - - [23/Apr/2018:20:30:39 +0300] "POST /grid/2/messages HTTP/1.1" 200 48 0.0498

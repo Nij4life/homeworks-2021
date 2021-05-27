@@ -7,13 +7,13 @@ RSpec.describe ArrayRefinement do
   let(:arr) { [1, 2, 3, 4, 5] }
 
   describe '.each' do
-    context 'case no block given' do
+    context 'when block is not given' do
       it 'returns nil' do
         expect(arr.each).to eql(nil)
       end
     end
 
-    context 'case block given' do
+    context 'when block is given' do
       it 'not modified' do
         expect(arr.each { |e| e * 2 }).to eql([1, 2, 3, 4, 5])
       end
@@ -21,13 +21,13 @@ RSpec.describe ArrayRefinement do
   end
 
   describe '.map' do
-    context 'case no block given' do
+    context 'when block is not given' do
       it 'returns nil' do
         expect(arr.map).to eql(nil)
       end
     end
 
-    context 'case block given' do
+    context 'when block is given' do
       it 'modified' do
         expect(arr.map { |e| e * 2 }).to eql([2, 4, 6, 8, 10])
       end
@@ -35,19 +35,19 @@ RSpec.describe ArrayRefinement do
   end
 
   describe '.select' do
-    context 'case no block given' do
+    context 'when block is not given' do
       it 'returns nil' do
         expect(arr.select).to eql(nil)
       end
     end
 
-    context 'case block given' do
+    context 'when block is given' do
       it 'selects objects with a suitable condition' do
         expect(arr.select { |e| e.odd? }).to eql([1, 3, 5])
       end
 
-      it 'result and initial object are different' do
-        expect(arr.select { |e| e * 2 }.object_id).not_to eql(arr)
+      it 'return different object' do
+        expect(arr.select { |e| e * 2 }.object_id).not_to eql(arr.object_id)
       end
     end
   end

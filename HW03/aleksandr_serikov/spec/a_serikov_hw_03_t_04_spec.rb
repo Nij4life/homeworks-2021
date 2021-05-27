@@ -1,10 +1,23 @@
 require_relative '../a_serikov_hw_03_t_04'
 
 describe 'task4' do
-  context 'return the count of english letters and digits in that string' do
-    it { expect(task4("hel2!lo")).to eql(letters: 5, digits: 1) }
-    it { expect(task4("wicked .. !")).to eql(letters: 6, digits: 0) }
-    it { expect(task4("абракадабра")).to eql(letters: 0, digits: 0) }
-    it { expect(task4("😀😀😀😀😀")).to eql(letters: 0, digits: 0) }
+  context 'when the method accepts an empty string' do
+    it { expect(task4('')).to eql(letters: 0, digits: 0) }
+  end
+
+  context 'when the method only accepts numbers' do
+    it { expect(task4('777')).to eql(letters: 0, digits: 3) }
+  end
+
+  context 'when the method only accepts letters' do
+    it { expect(task4('Hello')).to eql(letters: 5, digits: 0) }
+  end
+
+  context 'when the method accepts on different values' do
+    it { expect(task4('10 dollars!!!')).to eql(letters: 7, digits: 2) }
+  end
+
+  context 'when the method only accepts inappropriate values' do
+    it { expect(task4('😀😀😀😀😀!@%^')).to eql(letters: 0, digits: 0) }
   end
 end
