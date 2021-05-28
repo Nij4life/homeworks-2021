@@ -1,6 +1,6 @@
 require_relative '../a_serikov_hw_03_t_04'
 
-describe 'task4' do
+describe '#task4' do
   context 'when the method accepts an empty string' do
     it { expect(task4('')).to eql(letters: 0, digits: 0) }
   end
